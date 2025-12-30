@@ -1,0 +1,261 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Hero } from "@modules/Hero";
+import { ServiceCards } from "@modules/ServiceCards";
+import { ContentSection } from "@modules/ContentSection";
+import { HighlightBanner } from "@modules/HighlightBanner";
+import { Footer } from "@modules/Footer";
+import { ProcessStepper } from "@components/ProcessStepper";
+import { ContactForm } from "@components/ContactForm";
+import { AnimatedCard } from "@components/AnimatedCard";
+import { CompactChecklist } from "@components/CompactChecklist";
+import { HeroSlider, InfiniteImg1, InfiniteImg2 } from "@static/images";
+
+const seoTitle = "Sitios Web Express | Luxion";
+const seoDescription = "Creamos sitios web modernos y administrables en tiempo récord, con IA que optimiza el desarrollo. Landing pages en el mismo día y costos mínimos.";
+
+const benefits = [
+  {
+    title: "🚀 Entrega ultra rápida",
+    description: "Sitios web en 48 horas, landing pages el mismo día",
+  },
+  {
+    title: "🤖 Desarrollo asistido por IA",
+    description: "Flujos optimizados, contenido y estructura generados con precisión",
+  },
+  {
+    title: "🧭 Administrable con Markdown",
+    description: "Edita fácilmente textos e imágenes sin depender de terceros",
+  },
+  {
+    title: "🎨 Diseño adaptable",
+    description: "Moderno, minimalista y funcional en todos los dispositivos",
+  },
+  {
+    title: "💰 Costo reducido",
+    description: "Gracias a la automatización, pagas menos sin sacrificar calidad",
+  },
+  {
+    title: "📈 Optimización SEO automática",
+    description: "Tu sitio listo para posicionarse desde el primer día",
+  }
+];
+
+const includes = [
+  {
+    title: "✓ Hasta 5 secciones completas",
+    description: "Inicio, Servicios, Nosotros, Contacto, etc."
+  },
+  {
+    title: "✓ Formularios funcionales y enlaces a redes sociales",
+    description: "Contacto y conexión social integrados"
+  },
+  {
+    title: "✓ Integración con Google Analytics y Mapas",
+    description: "Análisis y ubicación configurados"
+  },
+  {
+    title: "✓ Textos optimizados por IA según tu negocio",
+    description: "Contenido personalizado y optimizado"
+  },
+  {
+    title: "✓ Hosting y dominio opcional para lanzamiento inmediato",
+    description: "Todo listo para publicar"
+  },
+  {
+    title: "✓ Panel de contenido en Markdown (.md) editable",
+    description: "Fácil edición sin conocimientos técnicos"
+  }
+];
+
+const idealFor = [
+  {
+    title: "🧑‍💼 Mostrar tus servicios profesionales",
+    description: "Presencia profesional para tu negocio",
+  },
+  {
+    title: "🏢 Dar presencia online a tu empresa o startup",
+    description: "Establecer tu marca en el mundo digital",
+  },
+  {
+    title: "🛍️ Promocionar productos o campañas específicas",
+    description: "Marketing efectivo para tus productos",
+  },
+  {
+    title: "📱 Tener una landing page lista para anuncios o lanzamientos",
+    description: "Conversión optimizada desde el primer día",
+  },
+  {
+    title: "💡 Probar ideas digitales sin grandes inversiones",
+    description: "Validar conceptos con mínimo riesgo",
+  }
+];
+
+const processSteps = [
+  {
+    number: "1",
+    title: "Brief rápido",
+    description: "Cuéntanos tu negocio y el tipo de sitio que deseas"
+  },
+  {
+    number: "2",
+    title: "Generación IA + diseño",
+    description: "Nuestra IA crea estructura, textos e imágenes optimizadas"
+  },
+  {
+    number: "3",
+    title: "Revisión y entrega",
+    description: "Te entregamos el sitio listo para publicar en menos de 48h"
+  }
+];
+
+const perfectFor = [
+  {
+    icon: "",
+    title: "Mostrar tus servicios profesionales",
+    description: "Presencia profesional para tu negocio"
+  },
+  {
+    icon: "",
+    title: "Dar presencia online a tu empresa o startup",
+    description: "Establecer tu marca en el mundo digital"
+  },
+  {
+    icon: "",
+    title: "Promocionar productos o campañas específicas",
+    description: "Marketing efectivo para tus productos"
+  },
+  {
+    icon: "",
+    title: "Tener una landing page lista para anuncios o lanzamientos",
+    description: "Conversión optimizada desde el primer día"
+  },
+  {
+    icon: "",
+    title: "Probar ideas digitales sin grandes inversiones",
+    description: "Validar conceptos con mínimo riesgo"
+  }
+];
+---
+
+<Layout title={seoTitle} description={seoDescription}>
+  <main class="page-content">
+    <Hero 
+      heroType="ParallaxImage"
+      client:visible
+      data={{
+        image: HeroSlider.src,
+        content: {
+          title: "Sitios web express impulsados por IA, listos en horas, no semanas",
+          paragraph: "En Luxion, combinamos diseño moderno con el poder de la Inteligencia Artificial para crear sitios web express que se desarrollan en una fracción del tiempo tradicional. Lanza tu presencia digital con un sitio administrable, veloz y optimizado, listo en menos de 48 horas, o una landing page profesional en el mismo día.",
+          button: {
+            text: "🚀 Solicitar mi sitio express",
+            link: "/contact"
+          }
+        }
+      }}
+    />
+
+    <!-- Frase destacada -->
+    <HighlightBanner
+      tagline="TECNOLOGÍA AVANZADA"
+      mainText="⚡🤖 IA + experiencia = tu sitio web en tiempo récord y al menor costo."
+      variant="gradient"
+      client:visible
+    />
+
+    <!-- Sección de beneficios -->
+    <ContentSection client:visible>
+      <div style="text-align: center; margin-bottom: 60px;">
+        <p style="color: var(--secondary); font-size: 14px; font-weight: 600; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase;">BENEFICIOS CLAVE</p>
+        <h2 style="color: var(--tertiary);">¿Por qué elegir nuestro servicio express con IA?</h2>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; max-width: 1000px; margin: 0 auto;">
+        {benefits.map((benefit, index) => (
+          <AnimatedCard
+            key={index}
+            icon={benefit.title.split(' ')[0]}
+            title={benefit.title.substring(benefit.title.indexOf(' ') + 1)}
+            description={benefit.description}
+            variant="benefit"
+            delay={index * 100}
+            client:visible
+          />
+        ))}
+      </div>
+    </ContentSection>
+
+  <!-- Todo lo que recibes - Diseño de lista con checkmarks -->
+  <section style="background: var(--secondary); padding: 100px 0; margin: 50px 0;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <p style="color: var(--primary); font-size: 14px; font-weight: 600; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase;">TODO LO QUE INCLUYE</p>
+        <h2 style="color: var(--primary);">Todo lo que recibes</h2>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 800px; margin: 0 auto;">
+        {includes.map((include, index) => (
+          <AnimatedCard
+            key={index}
+            icon="✓"
+            title={include.title.substring(2)}
+            description={include.description}
+            variant="checklist"
+            delay={index * 150}
+            client:visible
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ProcessStepper 
+    subtitle="PROCESO OPTIMIZADO"
+    title="Así aceleramos tu lanzamiento"
+    client:visible
+    steps={processSteps}
+  />
+
+  <!-- Perfecto si necesitas - Diseño checklist compacto -->
+   <section style="background: #f4f4f4;">
+    <ContentSection client:visible>
+      <div style="text-align: center; margin-bottom: 30px;">
+        <p style="color: var(--secondary); font-size: 12px; font-weight: 600; letter-spacing: 1.5px; margin-bottom: 12px; text-transform: uppercase;">CASOS DE USO</p>
+        <h2 style="font-size: 32px; line-height: 1.2; margin-bottom: 0; color: var(--secondary);">Perfecto si necesitas…</h2>
+      </div>
+      
+      <div style="display: flex; flex-direction: column; gap: 40px; margin-top: 40px;">
+        <CompactChecklist 
+          items={perfectFor.map(item => ({
+            title: item.title,
+            description: item.description
+          }))}
+          delay={200}
+          client:load
+        />
+      </div>
+    </ContentSection>
+  </section>
+
+  <Hero
+    heroType="textImage"
+    client:visible
+    data={{
+      image: {
+        src: HeroSlider.src,
+        width: 600,
+        height: 400,
+        alt: "Sitio web express con IA",
+      },
+      title: "🚀 Lanza tu web hoy mismo",
+      paragraph:
+        "Con Luxion, obtienes sitios express impulsados por IA, listos en horas y con costos mínimos. Solicita tu web express ahora y obtén tu landing page el mismo día.",
+    }}
+  />
+
+  <ContactForm client:visible />
+  </main>
+
+  <Footer />
+</Layout>

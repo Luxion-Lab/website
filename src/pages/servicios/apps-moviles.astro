@@ -1,0 +1,248 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Hero } from "@modules/Hero";
+import { ServiceCards } from "@modules/ServiceCards";
+import { Footer } from "@modules/Footer";
+import { ProcessStepper } from "@components/ProcessStepper";
+import { MobileTechSlider } from "@components/MobileTechSlider";
+import { ContactForm } from "@components/ContactForm";
+import { HeroSlider, InfiniteImg1, InfiniteImg2 } from "@static/images";
+---
+
+<Layout
+    title="Desarrollo de Apps Móviles | Aplicaciones iOS y Android a medida | Luxion"
+    description="Diseñamos y desarrollamos aplicaciones móviles personalizadas para Android y iOS. Experiencias modernas, rápidas y seguras que conectan tu negocio con tus usuarios."
+>
+    <main class="page-content">
+        <!-- Hero Section -->
+        <Hero
+            heroType="ParallaxImage"
+            client:visible
+            data={{
+                image: HeroSlider.src,
+                content: {
+                    title: "Creamos apps móviles que conectan ideas con resultados",
+                    paragraph:
+                        "En Luxion desarrollamos aplicaciones móviles a medida, modernas, seguras y escalables. Lleva tu negocio a la palma de la mano de tus clientes.",
+                    button: {
+                        text: "📲 Solicita una propuesta para tu app",
+                        link: "/contact",
+                    },
+                },
+            }}
+        />
+
+        <!-- Sección 1 - Qué hacemos -->
+        <ServiceCards
+            description="APPS MÓVILES"
+            title="Aplicaciones móviles diseñadas para crecer contigo"
+            client:visible
+            cards={[
+                {
+                    title: "📲 App de gestión interna para equipos de trabajo",
+                    description:
+                        "Herramientas móviles que optimizan la comunicación y productividad de tu equipo desde cualquier lugar.",
+                },
+                {
+                    title: "⚡ Aplicación de reservas o pedidos con notificaciones push",
+                    description:
+                        "Sistemas de reservas y pedidos en tiempo real con notificaciones inteligentes para tus clientes.",
+                },
+                {
+                    title: "🧠 App educativa con integración a plataformas web",
+                    description:
+                        "Aplicaciones de aprendizaje que se sincronizan perfectamente con tus sistemas web existentes.",
+                },
+                {
+                    title: "🔒 Aplicación de seguimiento y reportes para empresas",
+                    description:
+                        "Dashboards móviles seguros para monitorear métricas y generar reportes desde tu dispositivo.",
+                },
+            ]}
+        />
+
+        <!-- Tecnologías -->
+        <MobileTechSlider 
+            client:visible 
+            title="📱 Tecnología moderna para apps rápidas y seguras"
+            subtitle="TECNOLOGÍAS MÓVILES"
+            description="Utilizamos las mejores tecnologías y frameworks para crear aplicaciones móviles nativas y multiplataforma que ofrecen rendimiento excepcional."
+        />
+
+        <!-- Proceso de desarrollo -->
+        <ProcessStepper
+            client:visible
+            title="📱 De la idea al lanzamiento, paso a paso"
+            subtitle="PROCESO DE DESARROLLO"
+            description="Transformamos tu idea en una app exitosa siguiendo un proceso probado que garantiza calidad y resultados."
+            steps={[
+                {
+                    number: "1",
+                    title: "Análisis y Planificación",
+                    description: "Definimos objetivos, audiencia target y funcionalidades clave. Creamos wireframes y especificaciones técnicas detalladas."
+                },
+                {
+                    number: "2", 
+                    title: "Diseño UX/UI",
+                    description: "Diseñamos interfaces intuitivas y atractivas que ofrecen la mejor experiencia de usuario en dispositivos móviles."
+                },
+                {
+                    number: "3",
+                    title: "Desarrollo y Testing", 
+                    description: "Desarrollamos tu app con código limpio y realizamos pruebas exhaustivas en diferentes dispositivos y sistemas operativos."
+                },
+                {
+                    number: "4",
+                    title: "Lanzamiento y Soporte",
+                    description: "Publicamos tu app en las tiendas oficiales y te brindamos soporte continuo para actualizaciones y mejoras."
+                }
+            ]}
+        />
+
+        <!-- Sección 4 - Beneficios -->
+        <section class="benefits-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Por qué elegirnos para tu app móvil</h2>
+                    <p>
+                        Con Luxion, obtienes más que una aplicación: obtienes un producto sólido, fácil de mantener y diseñado para escalar.
+                    </p>
+                </div>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <span class="check-icon">✅</span>
+                        <span>Desarrollo multiplataforma (Android e iOS)</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="check-icon">✅</span>
+                        <span>Experiencias rápidas y fluidas</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="check-icon">✅</span>
+                        <span>Integración total con tus sistemas existentes</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="check-icon">✅</span>
+                        <span>Escalabilidad y soporte continuo</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero CTA Final -->
+        <Hero
+            heroType="textImage"
+            client:visible
+            data={{
+                image: {
+                    src: InfiniteImg1.src,
+                    width: 600,
+                    height: 400,
+                    alt: "Desarrollo de aplicaciones móviles",
+                },
+                title: "📲 ¿Listo para lanzar tu próxima app?",
+                paragraph:
+                    "Conecta con tus clientes de forma directa y moderna. Nuestro equipo convierte tus ideas en aplicaciones móviles potentes y fáciles de usar.",
+            }}
+        />
+
+        <ContactForm client:visible />
+    </main>
+    <Footer />
+</Layout>
+
+<style>
+    .page-content {
+        min-height: 100vh;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .benefits-section {
+        padding: 80px 0;
+        background: #f8fafc;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 20px;
+    }
+
+    .section-header p {
+        font-size: 1.2rem;
+        color: #64748b;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .benefit-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 25px;
+        background: white;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+    }
+
+    .benefit-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .check-icon {
+        font-size: 20px;
+        flex-shrink: 0;
+    }
+
+    .benefit-item span:last-child {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #1e293b;
+        line-height: 1.5;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+        }
+
+        .benefits-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .benefit-item {
+            padding: 20px;
+        }
+    }
+</style>

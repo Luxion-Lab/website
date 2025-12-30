@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Hero } from "@modules/Hero";
+import ContentSection from "../modules/ContentSection";
+import ServiceCards from "../modules/ServiceCards";
+import Contact from "../modules/Contact";
+import { HeroSlider} from "../static/images";
+import { HeroSliderVideo1, HeroSliderVideo2, HeroSliderVideo3 } from "../static/videos";
+---
+
+<Layout
+    title="Luxion | Desarrollo de software y automatizaciones inteligentes"
+    description="Diseñamos software, sitios web y automatizaciones que optimizan tus procesos y potencian tu negocio con tecnología sin complicaciones."
+>
+    <main class="page-content">
+        <Hero
+            client:load
+            heroType="fullPageSlider"
+            data={[
+                {
+                    subtitle: "Qué hacemos",
+                    title: "Impulsamos tu negocio con tecnología inteligente",
+                    background: HeroSliderVideo1,
+                    paragraph:
+                        "En Luxion desarrollamos software, sitios web y automatizaciones a medida que optimizan procesos, reducen costos y simplifican la gestión digital de tu empresa.",
+                    button: {
+                        text: "Descubre nuestras soluciones",
+                        link: "/software-a-medida",
+                    },
+                },
+                {
+                    subtitle: "Automatizaciones inteligentes",
+                    title: "Automatiza tareas, enfócate en lo importante",
+                    background: HeroSliderVideo2,
+                    paragraph: "Diseñamos flujos automatizados que integran tus sistemas y eliminan procesos repetitivos. Desde bots hasta integraciones entre plataformas, hacemos que la tecnología trabaje por ti.",
+                    button: {
+                        text: "Ver servicios de automatización",
+                        link: "/automatizaciones",
+                    },
+                },
+                {
+                    subtitle: "Desarrollo express",
+                    title: "Sitios web informativos listos en tiempo récord",
+                    background: HeroSliderVideo3,
+                    paragraph: "Con nuestro servicio Express Web, obtén una página moderna, administrable y optimizada en pocos días, con costos mínimos y alto impacto visual. Ideal para pymes y profesionales.",
+                    button: {
+                        text: "Cotiza tu web express",
+                        link: "/sitios-web-express",
+                    },
+                },
+            ]}
+        />
+    </main>
+</Layout>

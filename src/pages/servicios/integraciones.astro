@@ -1,0 +1,374 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Hero } from "@modules/Hero";
+import { ServiceCards } from "@modules/ServiceCards";
+import { Footer } from "@modules/Footer";
+import { ContactForm } from "@components/ContactForm";
+import { HeroSlider, InfiniteImg1 } from "@static/images";
+---
+
+<Layout
+    title="Integraciones entre Sistemas | Conecta tus plataformas y optimiza tu flujo digital | Luxion"
+    description="Integra tus herramientas y plataformas en un solo flujo de trabajo. En Luxion conectamos tus sistemas para que compartan datos y trabajen como uno solo."
+>
+    <main class="page-content">
+        <!-- Hero Section -->
+        <Hero
+            heroType="ParallaxImage"
+            client:visible
+            data={{
+                image: HeroSlider.src,
+                content: {
+                    title: "Conectamos tus herramientas, potenciamos tu productividad",
+                    paragraph:
+                        "En Luxion, unimos tus aplicaciones, sistemas y bases de datos para que trabajen en sincronía. Logra una operación fluida, sin duplicar esfuerzos.",
+                    button: {
+                        text: "🔗 Solicita tu integración personalizada",
+                        link: "/contact",
+                    },
+                },
+            }}
+        />
+
+        <!-- Sección 1 - Qué hacemos -->
+        <ServiceCards
+            description="INTEGRACIONES"
+            title="Todas tus herramientas, sincronizadas y funcionando como un ecosistema"
+            client:visible
+            cards={[
+                {
+                    title: "🧩 Conecta tu CRM con tu web y tu sistema de facturación",
+                    description:
+                        "Sincronización automática de leads, clientes y facturación entre todas tus plataformas principales.",
+                },
+                {
+                    title: "⚙️ Sincroniza tus hojas de cálculo con tu base de datos",
+                    description:
+                        "Actualización bidireccional en tiempo real entre Excel, Google Sheets y tus sistemas de gestión.",
+                },
+                {
+                    title: "📡 Integra tu tienda online con tu sistema de inventario",
+                    description:
+                        "Control automático de stock, pedidos y logística entre e-commerce y gestión de inventario.",
+                },
+                {
+                    title: "🚀 Conecta tus formularios web con herramientas de marketing",
+                    description:
+                        "Flujo directo de leads desde formularios hacia CRM, email marketing y sistemas de seguimiento.",
+                },
+            ]}
+        />
+
+        <!-- Sección 2 - Beneficios -->
+        <section class="benefits-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>El poder de tener todos tus sistemas conectados</h2>
+                    <p>
+                        Con nuestras integraciones, eliminas tareas duplicadas, mejoras la precisión de tus datos y optimizas la comunicación entre áreas.
+                    </p>
+                </div>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <span class="check-icon">✅</span>
+                        <span>Un solo flujo de datos entre todas tus herramientas</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="check-icon">✅</span>
+                        <span>Reducción de errores manuales</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="check-icon">✅</span>
+                        <span>Ahorro de tiempo y esfuerzo operativo</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="check-icon">✅</span>
+                        <span>Mayor visibilidad y control sobre tu negocio</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="check-icon">✅</span>
+                        <span>Flexibilidad para crecer e incorporar nuevas plataformas</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3 - Tecnologías -->
+        <section class="technologies-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Conectamos lo que usas con lo que necesitas</h2>
+                    <p>
+                        Trabajamos con APIs y servicios de integración líderes para garantizar compatibilidad, seguridad y estabilidad.
+                    </p>
+                </div>
+                
+                <div class="tech-categories">
+                    <div class="tech-category">
+                        <h3>Plataformas de Integración</h3>
+                        <div class="tech-items">
+                            <span class="tech-item">Make</span>
+                            <span class="tech-item">Zapier</span>
+                            <span class="tech-item">n8n</span>
+                            <span class="tech-item">Pabbly Connect</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h3>APIs y Protocolos</h3>
+                        <div class="tech-items">
+                            <span class="tech-item">REST API</span>
+                            <span class="tech-item">GraphQL</span>
+                            <span class="tech-item">Webhooks</span>
+                            <span class="tech-item">Custom APIs</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h3>Sistemas Compatibles</h3>
+                        <div class="tech-items">
+                            <span class="tech-item">WordPress</span>
+                            <span class="tech-item">Shopify</span>
+                            <span class="tech-item">Google Sheets</span>
+                            <span class="tech-item">HubSpot</span>
+                            <span class="tech-item">Notion</span>
+                            <span class="tech-item">Slack</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 4 - Casos de uso -->
+        <section class="success-cases">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Integraciones que generan impacto real</h2>
+                    <p>
+                        Hemos ayudado a empresas a centralizar sus datos y mejorar su productividad conectando herramientas que antes trabajaban por separado.
+                    </p>
+                </div>
+                
+                <div class="cases-grid">
+                    <div class="case-card">
+                        <div class="case-icon">📊</div>
+                        <h3>Integración CRM + Marketing</h3>
+                        <p>Integración de formularios web con CRM y automatización de leads para seguimiento personalizado</p>
+                        <div class="case-metric">+85% conversión leads</div>
+                    </div>
+                    
+                    <div class="case-card">
+                        <div class="case-icon">💼</div>
+                        <h3>E-commerce + Contabilidad</h3>
+                        <p>Sincronización de inventario entre tienda online y sistema contable con control automático de stock</p>
+                        <div class="case-metric">-90% errores inventario</div>
+                    </div>
+                    
+                    <div class="case-card">
+                        <div class="case-icon">📈</div>
+                        <h3>Marketing Multicanal</h3>
+                        <p>Conexión de herramientas de marketing para medir conversiones en tiempo real y optimizar campañas</p>
+                        <div class="case-metric">+150% ROI marketing</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero CTA Final -->
+        <Hero
+            heroType="textImage"
+            client:visible
+            data={{
+                image: {
+                    src: InfiniteImg1.src,
+                    width: 600,
+                    height: 400,
+                    alt: "Integración de sistemas empresariales",
+                },
+                title: "🔗 ¿Listo para conectar tus sistemas?",
+                paragraph:
+                    "Da el siguiente paso hacia una operación más inteligente y sin fricciones. Nuestro equipo te ayuda a diseñar integraciones seguras, escalables y a medida de tu negocio.",
+            }}
+        />
+
+        <ContactForm client:visible />
+    </main>
+    <Footer />
+</Layout>
+
+<style>
+    .page-content {
+        min-height: 100vh;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Sección de beneficios */
+    .benefits-section {
+        padding: 80px 0;
+        background: #f8fafc;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 20px;
+    }
+
+    .section-header p {
+        font-size: 1.2rem;
+        color: #64748b;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .benefit-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 1.1rem;
+        color: #374151;
+    }
+
+    .check-icon {
+        color: #06d6a0;
+        font-size: 1.2rem;
+    }
+
+    /* Sección de tecnologías */
+    .technologies-section {
+        padding: 80px 0;
+        background: white;
+    }
+
+    .tech-categories {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+    }
+
+    .tech-category h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #1e293b;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .tech-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .tech-item {
+        background: #f1f5f9;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #475569;
+        border: 1px solid #e2e8f0;
+        transition: all 0.3s ease;
+    }
+
+    .tech-item:hover {
+        background: #3b82f6;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    /* Casos de éxito */
+    .success-cases {
+        padding: 80px 0;
+        background: #f8fafc;
+    }
+
+    .cases-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .case-card {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        text-align: center;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .case-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .case-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .case-card h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #1e293b;
+        margin-bottom: 15px;
+    }
+
+    .case-card p {
+        color: #64748b;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .case-metric {
+        background: #06d6a0;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: 600;
+        display: inline-block;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .section-header h2 {
+            font-size: 2rem;
+        }
+
+        .benefits-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .tech-categories {
+            grid-template-columns: 1fr;
+        }
+
+        .cases-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

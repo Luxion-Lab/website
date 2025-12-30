@@ -1,0 +1,382 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Hero } from "@modules/Hero";
+import { ServiceCards } from "@modules/ServiceCards";
+import { Footer } from "@modules/Footer";
+import { ContactForm } from "@components/ContactForm";
+import { HeroSlider, InfiniteImg1 } from "@static/images";
+---
+
+<Layout
+    title="Automatizaciones Inteligentes | Optimiza tus procesos con IA y flujos digitales | Luxion"
+    description="Ahorra tiempo y elimina tareas repetitivas con automatizaciones inteligentes. Integramos tus herramientas y optimizamos tus procesos con tecnología moderna."
+>
+    <main class="page-content">
+        <!-- Hero Section -->
+        <Hero
+            heroType="ParallaxImage"
+            client:visible
+            data={{
+                image: HeroSlider.src,
+                content: {
+                    title: "Automatiza tu negocio y gana tiempo para lo que importa",
+                    paragraph:
+                        "Creamos automatizaciones inteligentes que conectan tus sistemas, ejecutan tareas de forma autónoma y te ayudan a operar con máxima eficiencia.",
+                    button: {
+                        text: "⚙️ Solicita una demo personalizada",
+                        link: "/contact",
+                    },
+                },
+            }}
+        />
+
+        <!-- Sección 1 - Qué automatizamos -->
+        <ServiceCards
+            description="AUTOMATIZACIONES"
+            title="Transformamos tus procesos en flujos inteligentes"
+            client:visible
+            cards={[
+                {
+                    title: "📧 Envío automático de correos",
+                    description:
+                        "Notificaciones desde tu CRM y seguimiento automatizado de leads con personalización completa.",
+                },
+                {
+                    title: "🔄 Sincronización de datos",
+                    description:
+                        "Integración entre sistemas ERP, web y contabilidad en tiempo real sin errores manuales.",
+                },
+                {
+                    title: "🤖 Bots inteligentes",
+                    description:
+                        "Clasificación automática de leads y respuestas de clientes con inteligencia artificial.",
+                },
+                {
+                    title: "📊 Reportes automáticos",
+                    description:
+                        "Generación de reportes y hojas de cálculo sin intervención manual, siempre actualizados.",
+                },
+                {
+                    title: "💰 Flujos de ventas",
+                    description:
+                        "Automatización completa de procesos de ventas y facturación desde lead hasta cobro.",
+                },
+                {
+                    title: "⚡ Integración total",
+                    description:
+                        "Conexión fluida entre todas tus herramientas de trabajo para máxima eficiencia.",
+                },
+            ]}
+        />
+
+        <!-- Sección 2 - Beneficios -->
+        <section class="benefits-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Resultados medibles con cada automatización</h2>
+                    <p>
+                        Nuestras automatizaciones te permiten enfocarte en el crecimiento, reduciendo errores y aumentando la productividad.
+                    </p>
+                </div>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <span class="check-icon">✅</span>
+                        <span>Reducción de costos operativos</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="check-icon">✅</span>
+                        <span>Eliminación de tareas repetitivas</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="check-icon">✅</span>
+                        <span>Integración sin interrupciones entre sistemas</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="check-icon">✅</span>
+                        <span>Mayor eficiencia y trazabilidad</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="check-icon">✅</span>
+                        <span>Aumento del enfoque estratégico del equipo</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3 - Tecnologías -->
+        <section class="technologies-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Automatización con tecnología de vanguardia</h2>
+                    <p>
+                        Usamos herramientas líderes para conectar, integrar y automatizar procesos empresariales con precisión y seguridad.
+                    </p>
+                </div>
+                
+                <div class="tech-categories">
+                    <div class="tech-category">
+                        <h3>Plataformas de Automatización</h3>
+                        <div class="tech-items">
+                            <span class="tech-item">Make</span>
+                            <span class="tech-item">n8n</span>
+                            <span class="tech-item">Zapier</span>
+                            <span class="tech-item">Pabbly Connect</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h3>APIs y Scripts</h3>
+                        <div class="tech-items">
+                            <span class="tech-item">Python</span>
+                            <span class="tech-item">Node.js</span>
+                            <span class="tech-item">Webhooks REST</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h3>Integraciones</h3>
+                        <div class="tech-items">
+                            <span class="tech-item">Google Workspace</span>
+                            <span class="tech-item">Notion</span>
+                            <span class="tech-item">Slack</span>
+                            <span class="tech-item">Airtable</span>
+                            <span class="tech-item">WordPress</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 4 - Casos de éxito -->
+        <section class="success-cases">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Ejemplos reales de automatización con impacto</h2>
+                    <p>
+                        Algunos de nuestros proyectos más recientes han reducido tiempos de operación en más de un 70%.
+                    </p>
+                </div>
+                
+                <div class="cases-grid">
+                    <div class="case-card">
+                        <div class="case-icon">🧾</div>
+                        <h3>Reportes Financieros</h3>
+                        <p>Automatización de reportes financieros semanales con datos en tiempo real</p>
+                        <div class="case-metric">70% menos tiempo</div>
+                    </div>
+                    
+                    <div class="case-card">
+                        <div class="case-icon">📬</div>
+                        <h3>Integración CRM</h3>
+                        <p>Conexión entre formulario web y CRM con envío automático de correos de seguimiento</p>
+                        <div class="case-metric">0% errores manuales</div>
+                    </div>
+                    
+                    <div class="case-card">
+                        <div class="case-icon">🧠</div>
+                        <h3>Chatbot Inteligente</h3>
+                        <p>Bot que responde preguntas frecuentes y genera leads calificados automáticamente</p>
+                        <div class="case-metric">300% más leads</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero CTA Final -->
+        <Hero
+            heroType="textImage"
+            client:visible
+            data={{
+                image: {
+                    src: InfiniteImg1.src,
+                    width: 600,
+                    height: 400,
+                    alt: "Automatización empresarial inteligente",
+                },
+                title: "🎯 ¿Listo para automatizar tu empresa?",
+                paragraph:
+                    "Empieza hoy a reducir tareas manuales y aumentar tu eficiencia. Nuestro equipo diseña automatizaciones que se adaptan perfectamente a tu flujo de trabajo y transforman tu operación.",
+            }}
+        />
+
+        <ContactForm client:visible />
+    </main>
+    <Footer />
+</Layout>
+
+<style>
+    .page-content {
+        min-height: 100vh;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Sección de beneficios */
+    .benefits-section {
+        padding: 80px 0;
+        background: #f8fafc;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 20px;
+    }
+
+    .section-header p {
+        font-size: 1.2rem;
+        color: #64748b;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .benefit-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 1.1rem;
+        color: #374151;
+    }
+
+    .check-icon {
+        color: #06d6a0;
+        font-size: 1.2rem;
+    }
+
+    /* Sección de tecnologías */
+    .technologies-section {
+        padding: 80px 0;
+        background: white;
+    }
+
+    .tech-categories {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+    }
+
+    .tech-category h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #1e293b;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .tech-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .tech-item {
+        background: #f1f5f9;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #475569;
+        border: 1px solid #e2e8f0;
+        transition: all 0.3s ease;
+    }
+
+    .tech-item:hover {
+        background: #3b82f6;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    /* Casos de éxito */
+    .success-cases {
+        padding: 80px 0;
+        background: #f8fafc;
+    }
+
+    .cases-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .case-card {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        text-align: center;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .case-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .case-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .case-card h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #1e293b;
+        margin-bottom: 15px;
+    }
+
+    .case-card p {
+        color: #64748b;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .case-metric {
+        background: #06d6a0;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: 600;
+        display: inline-block;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .section-header h2 {
+            font-size: 2rem;
+        }
+
+        .benefits-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .tech-categories {
+            grid-template-columns: 1fr;
+        }
+
+        .cases-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
