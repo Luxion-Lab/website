@@ -9,7 +9,7 @@ import { ContactForm } from "@components/ContactForm";
 
 <Layout
     title="Contacto | Luxion"
-    description="YOUR META DESCRIPTION FOR SEO"
+    description="¡Contáctanos y te ayudaremos!"
 >
     <main class="page-content">
         <Hero
@@ -18,13 +18,12 @@ import { ContactForm } from "@components/ContactForm";
             data={{
                 image: HeroSlider.src,
                 content: {
-                    title: "Contact",
+                    title: "Contacto",
                     paragraph:
-                        "Get stuck or need help? Contact us and we will help you out!",
+                        "¡Contáctanos y te ayudaremos!",
                 },
             }}
         />
-        <ContactModule client:load />
         <ContactForm client:visible />
     </main>
     <Footer />

@@ -36,17 +36,26 @@ export const ContactForm: FC = () => {
         setIsSubmitting(true);
         setSubmitStatus('idle');
 
+        // Construir el body para el API externo
+        const apiBody = {
+            subject: `Nuevo mensaje de contacto de ${data.name} (${data.email})`,
+            body: `Nombre: ${data.name}\nEmail: ${data.email}\nTeléfono: ${data.phone}\nEmpresa: ${data.company || "-"}\n\nMensaje:\n${data.message}`,
+        };
+
         try {
-            // Aquí puedes cambiar la URL por tu endpoint real
-            const response = await axios.post('/api/contact', data, {
+            const response = await fetch('https://luxion.ddns.net/api/send_email', {
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
+                body: JSON.stringify(apiBody),
             });
 
-            if (response.status === 200) {
+            if (response.ok) {
                 setSubmitStatus('success');
                 reset();
+            } else {
+                setSubmitStatus('error');
             }
         } catch (error) {
             console.error('Error al enviar el formulario:', error);

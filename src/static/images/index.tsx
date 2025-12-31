@@ -3,7 +3,7 @@ import PreviewPng from "./preview.webp";
 import HeroImg from "./hero-img.webp";
 import Logo from "./logo.webp";
 
-import HeroSlider from "./hero-slider.jpg";
+import HeroSlider from "./hero-slider.webp";
 
 import HeroSlider1Preview from "./hero-slider-01-preview.webp";
 import HeroSlider2Preview from "./hero-slider-02-preview.webp";

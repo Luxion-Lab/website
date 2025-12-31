@@ -3,8 +3,9 @@ import { MediaQuery } from "@styles/mediaQuery";
 
 export const StyledContainer = styled.div`
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 10px;
     width: 100%;
+    margin-top: -43px;
 
     max-width: 540px;
 
@@ -14,13 +15,16 @@ export const StyledContainer = styled.div`
 
     ${MediaQuery.between("lg", "xl")} {
         max-width: 960px;
+        padding: 40px;
     }
 
     ${MediaQuery.between("xl", "xxl")} {
         max-width: 1140px;
+        padding: 40px;
     }
 
     ${MediaQuery.min("xxl")} {
         max-width: 1320px;
+        padding: 40px;
     }
 `;

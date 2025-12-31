@@ -7,6 +7,8 @@ import { ProcessStepper } from "@components/ProcessStepper";
 import { ChatbotTechSlider } from "@components/ChatbotTechSlider";
 import { ContactForm } from "@components/ContactForm";
 import { HeroSlider, InfiniteImg1, InfiniteImg2 } from "@static/images";
+import { Container } from "@components/Container";
+
 ---
 
 <Layout 
@@ -31,104 +33,105 @@ import { HeroSlider, InfiniteImg1, InfiniteImg2 } from "@static/images";
                 },
             }}
         />
+    <Container>
+            <!-- Beneficios -->
+            <ServiceCards
+                description="AUTOMATIZACIÓN INTELIGENTE"
+                title="¿Por qué elegir un chatbot inteligente?"
+                client:visible
+                cards={[
+                    {
+                        title: "💡 Disponibilidad 24/7",
+                        description:
+                            "Atención automática sin interrupciones, siempre disponible para tus clientes cuando más lo necesitan.",
+                    },
+                    {
+                        title: "⚙️ Automatización total",
+                        description:
+                            "Responde preguntas frecuentes y gestiona solicitudes comunes automáticamente, liberando tiempo de tu equipo.",
+                    },
+                    {
+                        title: "🚀 Más ventas",
+                        description:
+                            "Guía a los usuarios hacia la compra o reserva con conversaciones inteligentes y personalizadas.",
+                    },
+                    {
+                        title: "📊 Datos útiles",
+                        description:
+                            "Recopila métricas y opiniones de clientes para mejorar continuamente tu negocio.",
+                    },
+                    {
+                        title: "🔗 Integración sencilla",
+                        description:
+                            "Conecta con CRM, sistemas internos o tu web sin complicaciones técnicas.",
+                    },
+                    {
+                        title: "🛍️ Casos de uso versátiles",
+                        description:
+                            "Desde e-commerce hasta servicios financieros, adaptamos el chatbot a tu industria específica.",
+                    },
+                ]}
+            />
 
-        <!-- Beneficios -->
-        <ServiceCards
-            description="AUTOMATIZACIÓN INTELIGENTE"
-            title="¿Por qué elegir un chatbot inteligente?"
-            client:visible
-            cards={[
-                {
-                    title: "💡 Disponibilidad 24/7",
-                    description:
-                        "Atención automática sin interrupciones, siempre disponible para tus clientes cuando más lo necesitan.",
-                },
-                {
-                    title: "⚙️ Automatización total",
-                    description:
-                        "Responde preguntas frecuentes y gestiona solicitudes comunes automáticamente, liberando tiempo de tu equipo.",
-                },
-                {
-                    title: "🚀 Más ventas",
-                    description:
-                        "Guía a los usuarios hacia la compra o reserva con conversaciones inteligentes y personalizadas.",
-                },
-                {
-                    title: "📊 Datos útiles",
-                    description:
-                        "Recopila métricas y opiniones de clientes para mejorar continuamente tu negocio.",
-                },
-                {
-                    title: "🔗 Integración sencilla",
-                    description:
-                        "Conecta con CRM, sistemas internos o tu web sin complicaciones técnicas.",
-                },
-                {
-                    title: "🛍️ Casos de uso versátiles",
-                    description:
-                        "Desde e-commerce hasta servicios financieros, adaptamos el chatbot a tu industria específica.",
-                },
-            ]}
-        />
+            <!-- Proceso de Desarrollo -->
+            <ProcessStepper 
+                client:visible
+                title="🤖 Proceso de creación del chatbot"
+                subtitle="METODOLOGÍA PROBADA"
+                description="Seguimos un proceso estructurado para crear chatbots que realmente funcionen para tu negocio y generen resultados medibles."
+                steps={[
+                    {
+                        number: "1",
+                        title: "Análisis de necesidades",
+                        description: "Definimos los flujos de conversación y objetivos específicos de tu negocio para crear la estrategia perfecta."
+                    },
+                    {
+                        number: "2",
+                        title: "Entrenamiento del modelo IA",
+                        description: "Desarrollamos el modelo con lenguaje natural adaptado a tu industria, marca y tono de comunicación."
+                    },
+                    {
+                        number: "3",
+                        title: "Diseño conversacional UX/UI",
+                        description: "Creamos una experiencia amigable, humana y clara que tus usuarios disfrutarán usar."
+                    },
+                    {
+                        number: "4",
+                        title: "Integración técnica",
+                        description: "Conectamos con APIs, bases de datos o plataformas existentes para un funcionamiento seamless."
+                    },
+                    {
+                        number: "5",
+                        title: "Pruebas y optimización continua",
+                        description: "Monitoreamos el rendimiento y mejoramos constantemente las respuestas basándonos en datos reales."
+                    }
+                ]}
+            />
+            
+            <!-- Tecnologías -->
+            <ChatbotTechSlider 
+                client:visible 
+            />
 
-        <!-- Proceso de Desarrollo -->
-        <ProcessStepper 
-            client:visible
-            title="🤖 Proceso de creación del chatbot"
-            subtitle="METODOLOGÍA PROBADA"
-            description="Seguimos un proceso estructurado para crear chatbots que realmente funcionen para tu negocio y generen resultados medibles."
-            steps={[
-                {
-                    number: "1",
-                    title: "Análisis de necesidades",
-                    description: "Definimos los flujos de conversación y objetivos específicos de tu negocio para crear la estrategia perfecta."
-                },
-                {
-                    number: "2",
-                    title: "Entrenamiento del modelo IA",
-                    description: "Desarrollamos el modelo con lenguaje natural adaptado a tu industria, marca y tono de comunicación."
-                },
-                {
-                    number: "3",
-                    title: "Diseño conversacional UX/UI",
-                    description: "Creamos una experiencia amigable, humana y clara que tus usuarios disfrutarán usar."
-                },
-                {
-                    number: "4",
-                    title: "Integración técnica",
-                    description: "Conectamos con APIs, bases de datos o plataformas existentes para un funcionamiento seamless."
-                },
-                {
-                    number: "5",
-                    title: "Pruebas y optimización continua",
-                    description: "Monitoreamos el rendimiento y mejoramos constantemente las respuestas basándonos en datos reales."
-                }
-            ]}
-        />
-        
-        <!-- Tecnologías -->
-        <ChatbotTechSlider 
-            client:visible 
-        />
+            <!-- CTA Final -->
+            <Hero
+                heroType="textImage"
+                client:visible
+                data={{
+                    image: {
+                        src: InfiniteImg2.src,
+                        width: 600,
+                        height: 400,
+                        alt: "Chatbot inteligente automatizando atención al cliente",
+                    },
+                    title: "💬 Lleva tu negocio al siguiente nivel con un chatbot inteligente",
+                    paragraph:
+                        "Automatiza la atención, mejora tus resultados y brinda una experiencia única a tus clientes. Nuestro equipo está listo para crear el chatbot perfecto para tu negocio. Contáctanos hoy y recibe una demo personalizada.",
+                }}
+            />
 
-        <!-- CTA Final -->
-        <Hero
-            heroType="textImage"
-            client:visible
-            data={{
-                image: {
-                    src: InfiniteImg2.src,
-                    width: 600,
-                    height: 400,
-                    alt: "Chatbot inteligente automatizando atención al cliente",
-                },
-                title: "💬 Lleva tu negocio al siguiente nivel con un chatbot inteligente",
-                paragraph:
-                    "Automatiza la atención, mejora tus resultados y brinda una experiencia única a tus clientes. Nuestro equipo está listo para crear el chatbot perfecto para tu negocio. Contáctanos hoy y recibe una demo personalizada.",
-            }}
-        />
-
-        <ContactForm client:visible />
+            <ContactForm client:visible />
+        </Container>
     </main>
     <Footer />
 </Layout>

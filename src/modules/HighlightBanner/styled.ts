@@ -8,7 +8,6 @@ interface HighlightBannerContainerProps {
 
 export const HighlightBannerContainer = styled.section<HighlightBannerContainerProps>`
   background: ${Theme.primary};
-    padding-top: 90px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     margin: -43px 0 50px;

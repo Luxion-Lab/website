@@ -7,6 +7,7 @@ import { ProcessStepper } from "@components/ProcessStepper";
 import { TechSlider } from "@components/TechSlider";
 import { ContactForm } from "@components/ContactForm";
 import { HeroSlider, InfiniteImg1, InfiniteImg2 } from "@static/images";
+import { Container } from "@components/Container";
 ---
 
 <Layout
@@ -27,102 +28,103 @@ import { HeroSlider, InfiniteImg1, InfiniteImg2 } from "@static/images";
             }}
         />
 
-        
-        <ServiceCards
-            description="SERVICIOS"
-            title="Lo que ofrecemos"
-            client:visible
-            cards={[
-                {
-                    title: "💻 Aplicaciones Web",
-                    description:
-                        "Desarrollamos aplicaciones web modernas, responsivas y escalables utilizando las últimas tecnologías.",
-                },
-                {
-                    title: "🏢 Sistemas Empresariales",
-                    description:
-                        "Creamos sistemas de gestión empresarial (ERP, CRM) adaptados a tus procesos de negocio.",
-                },
-                {
-                    title: "📱 Apps Móviles",
-                    description:
-                        "Desarrollamos aplicaciones móviles nativas e híbridas para iOS y Android.",
-                },
-                {
-                    title: "🔗 APIs y Microservicios",
-                    description:
-                        "Diseñamos arquitecturas robustas con APIs RESTful y microservicios escalables.",
-                },
-                {
-                    title: "☁️ Soluciones Cloud",
-                    description:
-                        "Implementamos soluciones en la nube con AWS, Azure y Google Cloud Platform.",
-                },
-                {
-                    title: "🤖 Automatización",
-                    description:
-                        "Automatizamos procesos empresariales para mejorar la eficiencia y reducir costos.",
-                },
-            ]}
-        />
+        <Container>
+            <ServiceCards
+                description="SERVICIOS"
+                title="Lo que ofrecemos"
+                client:visible
+                cards={[
+                    {
+                        title: "💻 Aplicaciones Web",
+                        description:
+                            "Desarrollamos aplicaciones web modernas, responsivas y escalables utilizando las últimas tecnologías.",
+                    },
+                    {
+                        title: "🏢 Sistemas Empresariales",
+                        description:
+                            "Creamos sistemas de gestión empresarial (ERP, CRM) adaptados a tus procesos de negocio.",
+                    },
+                    {
+                        title: "📱 Apps Móviles",
+                        description:
+                            "Desarrollamos aplicaciones móviles nativas e híbridas para iOS y Android.",
+                    },
+                    {
+                        title: "🔗 APIs y Microservicios",
+                        description:
+                            "Diseñamos arquitecturas robustas con APIs RESTful y microservicios escalables.",
+                    },
+                    {
+                        title: "☁️ Soluciones Cloud",
+                        description:
+                            "Implementamos soluciones en la nube con AWS, Azure y Google Cloud Platform.",
+                    },
+                    {
+                        title: "🤖 Automatización",
+                        description:
+                            "Automatizamos procesos empresariales para mejorar la eficiencia y reducir costos.",
+                    },
+                ]}
+            />
 
-        <ProcessStepper
-            client:visible
-            title="⚙️ Nuestro Proceso"
-            subtitle="Desarrollo ágil, transparente y colaborativo"
-            description='Seguimos metodologías ágiles para garantizar entregas rápidas, control total del avance y resultados de alto impacto.'
-            steps={[
-                {
-                    number: "1",
-                    title: "Análisis",
-                    description: "Entendemos tus procesos y necesidades específicas para diseñar la solución perfecta."
-                },
-                {
-                    number: "2", 
-                    title: "Diseño UX/UI",
-                    description: "Creamos experiencias intuitivas y modernas que tus usuarios amarán usar."
-                },
-                {
-                    number: "3",
-                    title: "Desarrollo", 
-                    description: "Construimos tu solución con tecnologías modernas y las mejores prácticas."
-                },
-                {
-                    number: "4",
-                    title: "Pruebas y Despliegue",
-                    description: "Aseguramos calidad y rendimiento antes de poner tu software en producción."
-                },
-                {
-                    number: "5",
-                    title: "Mantenimiento y Soporte",
-                    description: "Te acompañamos en cada etapa con soporte continuo y actualizaciones."
-                }
-            ]}
-        />
-        
-        <TechSlider 
-            client:visible 
-            title="Tecnologías que usamos"
-            description="Usamos herramientas confiables, seguras y de última generación para crear software robusto y escalable."
-        />
+            <ProcessStepper
+                client:visible
+                title="⚙️ Nuestro Proceso"
+                subtitle="Desarrollo ágil, transparente y colaborativo"
+                description='Seguimos metodologías ágiles para garantizar entregas rápidas, control total del avance y resultados de alto impacto.'
+                steps={[
+                    {
+                        number: "1",
+                        title: "Análisis",
+                        description: "Entendemos tus procesos y necesidades específicas para diseñar la solución perfecta."
+                    },
+                    {
+                        number: "2", 
+                        title: "Diseño UX/UI",
+                        description: "Creamos experiencias intuitivas y modernas que tus usuarios amarán usar."
+                    },
+                    {
+                        number: "3",
+                        title: "Desarrollo", 
+                        description: "Construimos tu solución con tecnologías modernas y las mejores prácticas."
+                    },
+                    {
+                        number: "4",
+                        title: "Pruebas y Despliegue",
+                        description: "Aseguramos calidad y rendimiento antes de poner tu software en producción."
+                    },
+                    {
+                        number: "5",
+                        title: "Mantenimiento y Soporte",
+                        description: "Te acompañamos en cada etapa con soporte continuo y actualizaciones."
+                    }
+                ]}
+            />
+            
+            <TechSlider 
+                client:visible 
+                title="Tecnologías que usamos"
+                description="Usamos herramientas confiables, seguras y de última generación para crear software robusto y escalable."
+            />
 
-        <Hero
-            heroType="textImage"
-            client:visible
-            data={{
-                image: {
-                    src: InfiniteImg2.src,
-                    width: 600,
-                    height: 400,
-                    alt: "Transformación digital empresarial",
-                },
-                title: "🎯 ¿Listo para transformar tu negocio?",
-                paragraph:
-                    "Lleva tu empresa al siguiente nivel con soluciones de software personalizadas que realmente se adaptan a tus necesidades. Nuestro equipo de expertos está listo para convertir tu visión en realidad.",
-            }}
-        />
+            <Hero
+                heroType="textImage"
+                client:visible
+                data={{
+                    image: {
+                        src: InfiniteImg2.src,
+                        width: 600,
+                        height: 400,
+                        alt: "Transformación digital empresarial",
+                    },
+                    title: "🎯 ¿Listo para transformar tu negocio?",
+                    paragraph:
+                        "Lleva tu empresa al siguiente nivel con soluciones de software personalizadas que realmente se adaptan a tus necesidades. Nuestro equipo de expertos está listo para convertir tu visión en realidad.",
+                }}
+            />
 
-        <ContactForm client:visible />
+            <ContactForm client:visible />
+        </Container>
     </main>
     <Footer />
 </Layout>

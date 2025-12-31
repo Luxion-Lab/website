@@ -4,7 +4,7 @@ import { MediaQuery } from "@styles/mediaQuery";
 
 export const ContactFormContainer = styled.section`
     background: ${Theme.primary};
-    padding: 30px 0 60px;
+    padding: 60px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     margin: -43px 0 0;

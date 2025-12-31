@@ -10,6 +10,8 @@ import { ContactForm } from "@components/ContactForm";
 import { AnimatedCard } from "@components/AnimatedCard";
 import { CompactChecklist } from "@components/CompactChecklist";
 import { HeroSlider, InfiniteImg1, InfiniteImg2 } from "@static/images";
+import { Container } from "@components/Container";
+
 
 const seoTitle = "Sitios Web Express | Luxion";
 const seoDescription = "Creamos sitios web modernos y administrables en tiempo récord, con IA que optimiza el desarrollo. Landing pages en el mismo día y costos mínimos.";
@@ -155,106 +157,107 @@ const perfectFor = [
         }
       }}
     />
+  <Container>
+      <!-- Frase destacada -->
+      <HighlightBanner
+        tagline="TECNOLOGÍA AVANZADA"
+        mainText="⚡🤖 IA + experiencia = tu sitio web en tiempo récord y al menor costo."
+        variant="gradient"
+        client:visible
+      />
 
-    <!-- Frase destacada -->
-    <HighlightBanner
-      tagline="TECNOLOGÍA AVANZADA"
-      mainText="⚡🤖 IA + experiencia = tu sitio web en tiempo récord y al menor costo."
-      variant="gradient"
+      <!-- Sección de beneficios -->
+      <ContentSection client:visible>
+        <div style="text-align: center; margin-bottom: 60px;">
+          <p style="color: var(--secondary); font-size: 14px; font-weight: 600; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase;">BENEFICIOS CLAVE</p>
+          <h2 style="color: var(--tertiary);">¿Por qué elegir nuestro servicio express con IA?</h2>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; max-width: 1000px; margin: 0 auto;">
+          {benefits.map((benefit, index) => (
+            <AnimatedCard
+              key={index}
+              icon={benefit.title.split(' ')[0]}
+              title={benefit.title.substring(benefit.title.indexOf(' ') + 1)}
+              description={benefit.description}
+              variant="benefit"
+              delay={index * 100}
+              client:visible
+            />
+          ))}
+        </div>
+      </ContentSection>
+
+    <!-- Todo lo que recibes - Diseño de lista con checkmarks -->
+    <section style="background: var(--secondary); padding: 100px 0; margin: 50px 0;">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <div style="text-align: center; margin-bottom: 60px;">
+          <p style="color: var(--primary); font-size: 14px; font-weight: 600; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase;">TODO LO QUE INCLUYE</p>
+          <h2 style="color: var(--primary);">Todo lo que recibes</h2>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 800px; margin: 0 auto;">
+          {includes.map((include, index) => (
+            <AnimatedCard
+              key={index}
+              icon="✓"
+              title={include.title.substring(2)}
+              description={include.description}
+              variant="checklist"
+              delay={index * 150}
+              client:visible
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <ProcessStepper 
+      subtitle="PROCESO OPTIMIZADO"
+      title="Así aceleramos tu lanzamiento"
       client:visible
+      steps={processSteps}
     />
 
-    <!-- Sección de beneficios -->
-    <ContentSection client:visible>
-      <div style="text-align: center; margin-bottom: 60px;">
-        <p style="color: var(--secondary); font-size: 14px; font-weight: 600; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase;">BENEFICIOS CLAVE</p>
-        <h2 style="color: var(--tertiary);">¿Por qué elegir nuestro servicio express con IA?</h2>
-      </div>
-      
-      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; max-width: 1000px; margin: 0 auto;">
-        {benefits.map((benefit, index) => (
-          <AnimatedCard
-            key={index}
-            icon={benefit.title.split(' ')[0]}
-            title={benefit.title.substring(benefit.title.indexOf(' ') + 1)}
-            description={benefit.description}
-            variant="benefit"
-            delay={index * 100}
-            client:visible
+    <!-- Perfecto si necesitas - Diseño checklist compacto -->
+    <section style="background: #f4f4f4;">
+      <ContentSection client:visible>
+        <div style="text-align: center; margin-bottom: 30px;">
+          <p style="color: var(--secondary); font-size: 12px; font-weight: 600; letter-spacing: 1.5px; margin-bottom: 12px; text-transform: uppercase;">CASOS DE USO</p>
+          <h2 style="font-size: 32px; line-height: 1.2; margin-bottom: 0; color: var(--secondary);">Perfecto si necesitas…</h2>
+        </div>
+        
+        <div style="display: flex; flex-direction: column; gap: 40px; margin-top: 40px;">
+          <CompactChecklist 
+            items={perfectFor.map(item => ({
+              title: item.title,
+              description: item.description
+            }))}
+            delay={200}
+            client:load
           />
-        ))}
-      </div>
-    </ContentSection>
+        </div>
+      </ContentSection>
+    </section>
 
-  <!-- Todo lo que recibes - Diseño de lista con checkmarks -->
-  <section style="background: var(--secondary); padding: 100px 0; margin: 50px 0;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-      <div style="text-align: center; margin-bottom: 60px;">
-        <p style="color: var(--primary); font-size: 14px; font-weight: 600; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase;">TODO LO QUE INCLUYE</p>
-        <h2 style="color: var(--primary);">Todo lo que recibes</h2>
-      </div>
-      
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 800px; margin: 0 auto;">
-        {includes.map((include, index) => (
-          <AnimatedCard
-            key={index}
-            icon="✓"
-            title={include.title.substring(2)}
-            description={include.description}
-            variant="checklist"
-            delay={index * 150}
-            client:visible
-          />
-        ))}
-      </div>
-    </div>
-  </section>
+    <Hero
+      heroType="textImage"
+      client:visible
+      data={{
+        image: {
+          src: HeroSlider.src,
+          width: 600,
+          height: 400,
+          alt: "Sitio web express con IA",
+        },
+        title: "🚀 Lanza tu web hoy mismo",
+        paragraph:
+          "Con Luxion, obtienes sitios express impulsados por IA, listos en horas y con costos mínimos. Solicita tu web express ahora y obtén tu landing page el mismo día.",
+      }}
+    />
 
-  <ProcessStepper 
-    subtitle="PROCESO OPTIMIZADO"
-    title="Así aceleramos tu lanzamiento"
-    client:visible
-    steps={processSteps}
-  />
-
-  <!-- Perfecto si necesitas - Diseño checklist compacto -->
-   <section style="background: #f4f4f4;">
-    <ContentSection client:visible>
-      <div style="text-align: center; margin-bottom: 30px;">
-        <p style="color: var(--secondary); font-size: 12px; font-weight: 600; letter-spacing: 1.5px; margin-bottom: 12px; text-transform: uppercase;">CASOS DE USO</p>
-        <h2 style="font-size: 32px; line-height: 1.2; margin-bottom: 0; color: var(--secondary);">Perfecto si necesitas…</h2>
-      </div>
-      
-      <div style="display: flex; flex-direction: column; gap: 40px; margin-top: 40px;">
-        <CompactChecklist 
-          items={perfectFor.map(item => ({
-            title: item.title,
-            description: item.description
-          }))}
-          delay={200}
-          client:load
-        />
-      </div>
-    </ContentSection>
-  </section>
-
-  <Hero
-    heroType="textImage"
-    client:visible
-    data={{
-      image: {
-        src: HeroSlider.src,
-        width: 600,
-        height: 400,
-        alt: "Sitio web express con IA",
-      },
-      title: "🚀 Lanza tu web hoy mismo",
-      paragraph:
-        "Con Luxion, obtienes sitios express impulsados por IA, listos en horas y con costos mínimos. Solicita tu web express ahora y obtén tu landing page el mismo día.",
-    }}
-  />
-
-  <ContactForm client:visible />
+    <ContactForm client:visible />
+  </Container>
   </main>
 
   <Footer />

@@ -6,6 +6,8 @@ import { Footer } from "@modules/Footer";
 import { ProcessStepper } from "@components/ProcessStepper";
 import { ContactForm } from "@components/ContactForm";
 import { HeroSlider, InfiniteImg1, InfiniteImg2 } from "@static/images";
+import { Container } from "@components/Container";
+
 ---
 
 <Layout 
@@ -30,123 +32,124 @@ import { HeroSlider, InfiniteImg1, InfiniteImg2 } from "@static/images";
                 },
             }}
         />
+    <Container>
+            <!-- Beneficios del soporte -->
+            <ServiceCards
+                description="SOPORTE INTEGRAL"
+                title="Todo lo que incluye nuestro servicio"
+                client:visible
+                cards={[
+                    {
+                        title: "🔄 Mantenimiento continuo",
+                        description:
+                            "Revisiones programadas y actualizaciones automáticas para mantener tu sitio siempre al día.",
+                    },
+                    {
+                        title: "🐞 Reparación de errores",
+                        description:
+                            "Diagnóstico y corrección rápida de fallos o conflictos antes de que afecten a tus usuarios.",
+                    },
+                    {
+                        title: "⚡ Optimización de rendimiento",
+                        description:
+                            "Mejora de velocidad, optimización de base de datos y configuración de caché avanzado.",
+                    },
+                    {
+                        title: "🧱 Seguridad avanzada",
+                        description:
+                            "Eliminación de malware y protección activa 24/7 contra amenazas y vulnerabilidades.",
+                    },
+                    {
+                        title: "☁️ Copias de seguridad automáticas",
+                        description:
+                            "Resguardo semanal o diario según tu plan, con restauración rápida cuando sea necesario.",
+                    },
+                    {
+                        title: "💬 Soporte técnico personalizado",
+                        description:
+                            "Canales directos para asistencia inmediata con nuestro equipo de expertos técnicos.",
+                    },
+                ]}
+            />
 
-        <!-- Beneficios del soporte -->
-        <ServiceCards
-            description="SOPORTE INTEGRAL"
-            title="Todo lo que incluye nuestro servicio"
-            client:visible
-            cards={[
-                {
-                    title: "🔄 Mantenimiento continuo",
-                    description:
-                        "Revisiones programadas y actualizaciones automáticas para mantener tu sitio siempre al día.",
-                },
-                {
-                    title: "🐞 Reparación de errores",
-                    description:
-                        "Diagnóstico y corrección rápida de fallos o conflictos antes de que afecten a tus usuarios.",
-                },
-                {
-                    title: "⚡ Optimización de rendimiento",
-                    description:
-                        "Mejora de velocidad, optimización de base de datos y configuración de caché avanzado.",
-                },
-                {
-                    title: "🧱 Seguridad avanzada",
-                    description:
-                        "Eliminación de malware y protección activa 24/7 contra amenazas y vulnerabilidades.",
-                },
-                {
-                    title: "☁️ Copias de seguridad automáticas",
-                    description:
-                        "Resguardo semanal o diario según tu plan, con restauración rápida cuando sea necesario.",
-                },
-                {
-                    title: "💬 Soporte técnico personalizado",
-                    description:
-                        "Canales directos para asistencia inmediata con nuestro equipo de expertos técnicos.",
-                },
-            ]}
-        />
+            <!-- Tipos de soporte -->
+            <ServiceCards
+                description="SOLUCIONES PERSONALIZADAS"
+                title="Soluciones adaptadas a tu necesidad"
+                client:visible
+                cards={[
+                    {
+                        title: "🌐 Webs informativas",
+                        description:
+                            "Actualización de plugins, seguridad y contenido para sitios corporativos y páginas informativas.",
+                    },
+                    {
+                        title: "🛒 E-commerce y WordPress avanzados",
+                        description:
+                            "Soporte integral para WooCommerce, pasarelas de pago y funcionalidades complejas.",
+                    },
+                    {
+                        title: "⚙️ Aplicaciones personalizadas o SaaS",
+                        description:
+                            "Monitoreo de uptime, análisis de logs y backups de bases de datos para sistemas complejos.",
+                    },
+                ]}
+            />
 
-        <!-- Tipos de soporte -->
-        <ServiceCards
-            description="SOLUCIONES PERSONALIZADAS"
-            title="Soluciones adaptadas a tu necesidad"
-            client:visible
-            cards={[
-                {
-                    title: "🌐 Webs informativas",
-                    description:
-                        "Actualización de plugins, seguridad y contenido para sitios corporativos y páginas informativas.",
-                },
-                {
-                    title: "🛒 E-commerce y WordPress avanzados",
-                    description:
-                        "Soporte integral para WooCommerce, pasarelas de pago y funcionalidades complejas.",
-                },
-                {
-                    title: "⚙️ Aplicaciones personalizadas o SaaS",
-                    description:
-                        "Monitoreo de uptime, análisis de logs y backups de bases de datos para sistemas complejos.",
-                },
-            ]}
-        />
+            <!-- Proceso de soporte -->
+            <ProcessStepper
+                client:visible
+                title="🛠️ Nuestro proceso de soporte"
+                subtitle="METODOLOGÍA PROBADA"
+                description="Seguimos un proceso estructurado para mantener tu sitio web o sistema siempre operativo y seguro."
+                steps={[
+                    {
+                        number: "1",
+                        title: "Diagnóstico inicial",
+                        description: "Analizamos tu sitio o sistema para identificar posibles mejoras y vulnerabilidades."
+                    },
+                    {
+                        number: "2",
+                        title: "Plan de mantenimiento",
+                        description: "Creamos un plan personalizado con tareas programadas y protocolos de seguridad."
+                    },
+                    {
+                        number: "3",
+                        title: "Monitoreo continuo",
+                        description: "Supervisamos el rendimiento 24/7 y aplicamos actualizaciones de forma proactiva."
+                    },
+                    {
+                        number: "4",
+                        title: "Soporte reactivo",
+                        description: "Respondemos rápidamente a incidencias y problemas técnicos cuando surgen."
+                    },
+                    {
+                        number: "5",
+                        title: "Reportes y optimización",
+                        description: "Proporcionamos informes regulares y optimizamos continuamente el rendimiento."
+                    }
+                ]}
+            />
 
-        <!-- Proceso de soporte -->
-        <ProcessStepper
-            client:visible
-            title="🛠️ Nuestro proceso de soporte"
-            subtitle="METODOLOGÍA PROBADA"
-            description="Seguimos un proceso estructurado para mantener tu sitio web o sistema siempre operativo y seguro."
-            steps={[
-                {
-                    number: "1",
-                    title: "Diagnóstico inicial",
-                    description: "Analizamos tu sitio o sistema para identificar posibles mejoras y vulnerabilidades."
-                },
-                {
-                    number: "2",
-                    title: "Plan de mantenimiento",
-                    description: "Creamos un plan personalizado con tareas programadas y protocolos de seguridad."
-                },
-                {
-                    number: "3",
-                    title: "Monitoreo continuo",
-                    description: "Supervisamos el rendimiento 24/7 y aplicamos actualizaciones de forma proactiva."
-                },
-                {
-                    number: "4",
-                    title: "Soporte reactivo",
-                    description: "Respondemos rápidamente a incidencias y problemas técnicos cuando surgen."
-                },
-                {
-                    number: "5",
-                    title: "Reportes y optimización",
-                    description: "Proporcionamos informes regulares y optimizamos continuamente el rendimiento."
-                }
-            ]}
-        />
+            <!-- CTA Final -->
+            <Hero
+                heroType="textImage"
+                client:visible
+                data={{
+                    image: {
+                        src: InfiniteImg1.src,
+                        width: 600,
+                        height: 400,
+                        alt: "Equipo técnico brindando soporte y mantenimiento web",
+                    },
+                    title: "🔧 Mantén tu sitio funcionando al 100%",
+                    paragraph:
+                        "Evita caídas, lentitud o problemas de seguridad. Confía en Luxion para mantener tu sistema siempre operativo. Nuestro equipo de expertos está listo para brindar el soporte que necesitas.",
+                }}
+            />
 
-        <!-- CTA Final -->
-        <Hero
-            heroType="textImage"
-            client:visible
-            data={{
-                image: {
-                    src: InfiniteImg1.src,
-                    width: 600,
-                    height: 400,
-                    alt: "Equipo técnico brindando soporte y mantenimiento web",
-                },
-                title: "🔧 Mantén tu sitio funcionando al 100%",
-                paragraph:
-                    "Evita caídas, lentitud o problemas de seguridad. Confía en Luxion para mantener tu sistema siempre operativo. Nuestro equipo de expertos está listo para brindar el soporte que necesitas.",
-            }}
-        />
-
-        <ContactForm client:visible />
+            <ContactForm client:visible />
+        </Container>
     </main>
     <Footer />
 </Layout>
