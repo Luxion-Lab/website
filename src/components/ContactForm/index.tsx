@@ -104,7 +104,7 @@ export const ContactForm: FC = () => {
                                     <S.FormInput
                                         {...register("phone")}
                                         type="tel"
-                                        placeholder="+52 123 456 7890"
+                                        placeholder="+1 000 000 0000"
                                         $hasError={!!errors.phone}
                                     />
                                     {errors.phone && (
