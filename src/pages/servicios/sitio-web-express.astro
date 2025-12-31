@@ -150,10 +150,7 @@ const perfectFor = [
         content: {
           title: "Sitios web express impulsados por IA, listos en horas, no semanas",
           paragraph: "En Luxion, combinamos diseño moderno con el poder de la Inteligencia Artificial para crear sitios web express que se desarrollan en una fracción del tiempo tradicional. Lanza tu presencia digital con un sitio administrable, veloz y optimizado, listo en menos de 48 horas, o una landing page profesional en el mismo día.",
-          button: {
-            text: "🚀 Solicitar mi sitio express",
-            link: "/contact"
-          }
+
         }
       }}
     />
@@ -176,7 +173,7 @@ const perfectFor = [
         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; max-width: 1000px; margin: 0 auto;">
           {benefits.map((benefit, index) => (
             <AnimatedCard
-              key={index}
+
               icon={benefit.title.split(' ')[0]}
               title={benefit.title.substring(benefit.title.indexOf(' ') + 1)}
               description={benefit.description}
@@ -199,7 +196,7 @@ const perfectFor = [
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 800px; margin: 0 auto;">
           {includes.map((include, index) => (
             <AnimatedCard
-              key={index}
+
               icon="✓"
               title={include.title.substring(2)}
               description={include.description}
