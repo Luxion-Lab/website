@@ -3,12 +3,14 @@ import react from "@astrojs/react";
 import CompressionPlugin from "vite-plugin-compression";
 import sitemap from "@astrojs/sitemap";
 
-export const siteUrl = "https://cybernetic-free-version.netlify.app";
+// Update this to your GitHub Pages URL, e.g. https://<username>.github.io/<repo>
+export const siteUrl = "https://luxiondev.com";
 
 const date = new Date().toISOString();
 // https://astro.build/config
 export default defineConfig({
     site: siteUrl + "/",
+    output: "static", // Required for GitHub Pages
 
     integrations: [
         react(),

@@ -1,5 +1,22 @@
 # 🚀Cybernetic Template - Astro + React
 
+## 🚀 GitHub Pages Deployment
+
+This project is configured for deployment to GitHub Pages.
+
+### Steps:
+1. Update `astro.config.mjs` and set your GitHub Pages URL:
+    ```js
+    export const siteUrl = "https://<username>.github.io/<repo>";
+    ```
+2. Push your changes to the `main` branch on GitHub.
+3. The site will be automatically built and deployed via GitHub Actions.
+
+Your site will be available at:
+```
+https://<username>.github.io/<repo>
+```
+
 ![Cybernetic Template](/src/static/images/preview.webp)
 [<img src="/src/static/images/link-pro.png">](https://codexcode.store/themes/cybernetic-website-template)
 [<img src="/src/static/images/link-live.png">](https://cybernetic-astro.netlify.app/)
