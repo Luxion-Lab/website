@@ -1,0 +1,1 @@
+const i={base:0,sm:576,md:768,lg:992,xl:1200,xxl:1440,xxxl:1920},e={min:x=>`@media (min-width: ${i[x]}px)`,max:x=>`@media (max-width: ${i[x]}px)`,between:(x,a)=>`@media (min-width: ${i[x]}px) and (max-width: ${i[a]}px)`};export{e as M};
